@@ -1,0 +1,19 @@
+n_c: new char
+
+d:
+
+r: result
+
+e_n: equal num
+
+
+Erreur1:
+
+
+Erreur2:
+
+
+Erreur3:
+
+
+Erreur4:

@@ -2,9 +2,9 @@
 strings:
 .asciz "Allo Hi"
 num:
-.asciz "Allo"
+.asciz "Allo\n"
 den:
-.asciz "Hi"
+.asciz "Hi\n"
 .text
 .globl main
 
@@ -63,27 +63,28 @@ jmp n_c2
 r:
 movl %ecx, %eax
 
+movl $0, %edx
 divl %ebx
-cmp $0x00, %eax
-jmp e_n
+test %eax, %eax
+jnz e_d
+cmp $0x00, %eax 
 je e_d              
+jmp e_n
              
 
 e_n:
 push $num
 call printf
- 
+addl $8, %esp
 jmp bye
 
 e_d:
 push $den
 call printf
-
+addl $8, %esp
+jmp bye
 
 bye:
 popl %ebx
 popl %ebp
 ret
-
-
-
