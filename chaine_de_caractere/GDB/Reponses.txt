@@ -8,15 +8,15 @@ e_n: equal num
 
 
 Erreur1:
-Il faut mettre %edx a 0 avant de faire la division, sinon on a une erreur.
+Ligne 65, il faut ecraser edx pour etre sur que la division puisse bien s'effectuer.
 
 
 Erreur2:
-Il faut ajouter un \n a la fin des strings, sinon on a une erreur.
+Il faut jump a e_d si eax est plus grand que 0 et non e_n
 
 Erreur3:
-Les ligne 71 et 72 on ete inverse, pour faire le jump conditionnel s'il y a lieu en premier.
+Il faut incrementer ESP apres avoir utiliser la commande printf
 
 
 Erreur4:
-La ligne, maintenant changer 71 doit etre jump if above et non below, car cela veut dire que le string "Allo" est bel et bien plus gros.
+Il faut incrementer ESP apres avoir utiliser la commande printf
