@@ -1,6 +1,6 @@
 n_c: new char
 
-d:
+d: division
 
 r: result
 
@@ -8,12 +8,15 @@ e_n: equal num
 
 
 Erreur1:
+Il faut mettre %edx a 0 avant de faire la division, sinon on a une erreur.
 
 
 Erreur2:
-
+Il faut ajouter un \n a la fin des strings, sinon on a une erreur.
 
 Erreur3:
+Les ligne 71 et 72 on ete inverse, pour faire le jump conditionnel s'il y a lieu en premier.
 
 
 Erreur4:
+La ligne, maintenant changer 71 doit etre jump if above et non below, car cela veut dire que le string "Allo" est bel et bien plus gros.

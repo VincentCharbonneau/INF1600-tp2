@@ -5,6 +5,8 @@ num:
 .asciz "Allo\n"
 den:
 .asciz "Hi\n"
+
+
 .text
 .globl main
 
@@ -65,24 +67,21 @@ movl %ecx, %eax
 
 movl $0, %edx
 divl %ebx
-test %eax, %eax
-jnz e_d
-cmp $0x00, %eax 
-je e_d              
+cmp $0x00, %eax
+ja e_d              
 jmp e_n
              
 
 e_n:
 push $num
 call printf
-addl $8, %esp
+ 
 jmp bye
 
 e_d:
 push $den
 call printf
-addl $8, %esp
-jmp bye
+
 
 bye:
 popl %ebx
