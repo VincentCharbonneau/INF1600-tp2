@@ -2,30 +2,43 @@
 .globl e_euler_entiere
 
 e_euler_entiere:
-
- 
 push %ebp
-mov %esp,%ebp
+mov %esp, %ebp
 push %ebx
+mov 8(%ebp), %ecx  #nombre iterations
 
-movl $1, %eax
-movl $1, %ebx
-movl $1, %ecx
-movl $1, %edi
-movl $10, %edx
+mov $1, %eax       #numerateur
+mov $1, %ebx       #denominateur
+mov $0, %edx       #somme
+mov $0, %edi       #compteur
+
+iteration0:        #pour 1/0!
+    cmp $0, %ecx
+    jz end
+    add $1, %edx
+    dec %ecx
+    jz end
 
 approximation_e:
-    mul %edi
+    inc %edi
+    mov %ebx, %eax
+    push %edx
+    mull %edi
+    pop %edx
+    mov %eax, %ebx
+    mov $1, %eax
+    push %edx
+    xor %edx, %edx
     div %ebx
-    incl %edi
-    mul %edi
-    cmp $10, %edi
-    je end
+    pop %edx
+    add %eax, %edx
     loop approximation_e
 
-pop %ebx
-pop %ebp
-ret
+end:
+    mov %edx, %eax
+    pop %ebx
+    pop %ebp
+    ret
 
 #Q3.2.2
 #On remarque qu'après 2 itérations, on a ajouté 1 deux fois '1',
