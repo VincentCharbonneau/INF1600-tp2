@@ -1,14 +1,16 @@
 n_c: new char
 
-d: division
+d: decide
 
 r: result
 
 e_n: equal num
 
 
+--Voir le fichier main.s pour l'emplacement des erreurs--
+
 Erreur1:
-Ligne 65, il faut ecraser edx pour etre sur que la division puisse bien s'effectuer.
+Il faut ecraser edx pour etre sur que la division puisse bien s'effectuer.
 
 
 Erreur2:
